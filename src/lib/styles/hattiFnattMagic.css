@@ -1,0 +1,222 @@
+    /*BACKGROUND*/
+    #hattifnattmagicWrapper {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #hattifnattmagicWrapper .overlay{
+        right: 0px;
+    }
+
+    video {
+        position: absolute;
+        top: 0;
+        height: calc(100vh - var(--nav-height) );
+        z-index: 10;
+        width: 85%;
+        /*min-height: 600px;*/
+        object-fit: cover;
+        left: 0;
+    }
+
+    .conversationAndSpacePlacer {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .conversationAndSpacePlacer .space {
+        width: 50%;
+    }
+
+    .conversationAndSpacePlacer .conversationWrapper {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background: var(--hattifnatt-bg-color);
+        background: linear-gradient(90deg, rgba(128,162,195,0) 0%, var(--hattifnatt-bg-color) 20%); 
+        backdrop-filter: blur(10px);
+        position: relative;
+        z-index: 11;
+    }
+
+    /*CONVERSATION*/
+    .yesDisplay{
+        min-width: 80%;
+    }
+
+    .conversationBox {
+        position: relative;
+        z-index: 11;
+        width: 80%;
+        margin: 20px auto;
+        border: var(--main-border-width) solid var(--color-text-main);
+        border-radius: var(--main-border-radius);
+        padding: 10px;
+        height: 70vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    .conversationBox > div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conversationBox .col-3{
+        height:100%;
+        margin-top: 50%;
+    }
+
+    .conversationBox > div > div > div.col-3.chatWrites{margin-top: 10px;}
+
+    .oneMessage{margin-bottom: 20px;}
+    .messageContent{max-width: 50%; min-width: 20%;padding: 15px 20px; border-radius: var(--main-border-radius);}
+    .messageContent p{ font-size: large; color: var(--color-text-main);}
+    .messageContent p:first-child{ font-weight: bold;}
+    .messageContent p:last-child{line-height:120%;}
+
+    /*styling for chatGPTs messages*/
+    .oneMessage.system{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        margin-left: 10px;
+    }
+    .system > div{
+        background-color: var(--system-msg);
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    /* Styling for users messages */
+    .oneMessage.user{
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        margin-right: 10px;
+    }
+    .user > div{
+        background-color: var(--user-msg);
+        margin-bottom: 10px;
+        text-align: right;
+    }
+
+    /* Styling for the chat input area */
+    form input {
+        width: 80%;
+        height: 40%;
+        min-height: 40%;
+        max-height: 80%;
+        padding: 5px;
+        border: var(--main-border-width) solid var(--color-main);
+        border-radius: var(--main-border-radius);
+        margin-bottom: 10px;
+    }
+
+    form input:focus{outline: none; outline-color: var(--color-accent);}
+    form button {margin-bottom: 10px;}
+    form .disabledtrue{pointer-events: none; background-color: var(--color-button-disabled);}
+
+/* CHOOSE HATTIFNATT */
+#chooseHattifnattWrapper{
+    height: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#chooseHattifnattWrapper .space{
+    width: 40%;
+    height: 80%;
+}
+
+#chooseYellow, #chooseWhite{
+    width: 30%;
+    border: var(--main-border-width) solid black;
+    border-radius: var(--main-border-radius);
+    height:80%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#chooseHattifnattWrapper .title{
+    height: 30%;
+    border-bottom: var(--main-border-width) solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#chooseHattifnattWrapper .title h2{
+    margin: 0px;
+
+}
+
+#chooseYellow, #chooseWhite,
+#chooseYellow .title, #chooseWhite .title,
+#chooseYellow .title h2, #chooseWhite .title h2,
+#chooseYellow .description, #chooseWhite .description{
+    transition: all 0.2s ease-in-out 0s;
+}
+
+#chooseYellow:hover, #chooseWhite:hover{
+    box-shadow: 0px 5px 5px var(--color-text-main);
+}
+
+#chooseHattifnattWrapper .description p {margin: 0px;font-size: 2vw;}
+#chooseHattifnattWrapper .description{
+    height: 70%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0px 1vw 0px 1vw;
+}
+
+#chooseYellow .title, #chooseYellow .description,
+#chooseWhite .title, #chooseWhite .description{pointer-events: none;}
+
+/*CHOOSE YELLOW*/
+
+#chooseYellow{
+    margin-left: 5vw;
+    border-color: var(--color-main-yellow);
+}
+#chooseYellow .title h2{ color: var(--color-main-yellow);}
+#chooseYellow:hover{
+    background-color: var(--color-main-yellow);
+    border-color: var(--color-text-main);
+}
+#chooseYellow .title{border-color: var(--color-main-yellow);}
+#chooseYellow:hover .title{border-color: var(--color-text-main);}
+#chooseYellow:hover .title h2{color: var(--color-text-main);}
+
+/*CHOOSE WHITE*/
+
+#chooseWhite{
+    margin-right: 5vw;
+}
+#chooseWhite{border-color: var(--color-accent);}
+#chooseWhite:hover{
+    background-color: var(--color-main-white);
+    border-color: var(--color-text-main);
+}
+#chooseWhite .title{
+    color: var(--color-accent);
+    border-color:var(--color-accent);
+}
+
+#chooseWhite:hover .title{
+    color: var(--color-text-main);
+    border-color: var(--color-text-main);
+}
+

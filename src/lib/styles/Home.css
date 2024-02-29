@@ -1,0 +1,40 @@
+#HomeWrapper{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    text-align: center;
+}
+
+.hattifnattPic{
+    height: 200px;
+    width: 200px;
+}
+
+#HomeWrapper .col-3{
+    margin-top: 50px;
+}
+
+#HomeWrapper > h6{
+    width: 50%;
+    margin-top:0px;
+}
+
+#home > div > div > h4{margin: 10px 0px 10px 0px;}
+#home > div , #home{width: 20vw; }
+
+.signOrReg{
+    margin-top: 30px;
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.signOrReg > button a{
+    text-decoration: none;
+    color: var(--color-text-main);
+}

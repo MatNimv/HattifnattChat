@@ -1,0 +1,41 @@
+
+#loginWrapper, #signUpWrapper{
+    width: 30%;
+}
+#loginWrapper > h3, #signUpWrapper > h3{
+    margin: 20px;
+}
+
+.loginInputs, .signUpInputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: var(--main-border-width) solid var(--color-text-main);
+    border-radius: var(--main-border-radius);
+}
+
+.loginInputs > input, .signUpInputs > input, 
+.signUpInputs > .nameInputs  > input{width:40%;}
+
+.emailInput p, .passInput p,
+.fnameInput p, .lnameInput p{margin: 30px 0px 0px 5px;}
+.login__textBox{
+    width: 80%;
+}
+
+.nameInputs{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#loginWrapper button, #signUpWrapper button{
+    margin: 10px 0px 30px 0px;
+}
+
+.choices {margin-top: 0px; }
+.choices.login{ display: flex; justify-content: space-around;}
+.choices h6{margin: 20px 0px 0px 0px;}
+#loginWrapper .choices > a button,  #signUpWrapper .choices > a button{margin: 10px 0px 0px 0px;}

@@ -1,0 +1,254 @@
+/* CUSTOM VARIABLES*/
+#root{
+  /*SIZES*/
+  --nav-height: 15vh;
+  --footer-height: 10vh;
+
+  --main-border-radius: 10px;
+  --main-border-width: 3px;
+
+  --color-main-yellow:#E6C28E;
+  --color-highOp-yellow:#e6c18ec9;
+  --color-highOp-white:#e2dfdbc9;
+
+  --main-font: font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+
+}
+
+.App#LightMode, .App#nullMode, .App#Mode .App#lightMode{
+  /* light mode*/
+  --color-main: #e1e8f1;
+  --color-accent: #909DA6;
+  --color-button:  #E6C28E;
+  --color-button-disabled:#b2956c;
+  --color-text-accent:#8EC2E6;
+  --color-text-main: #455866;
+  --color-button-accent: #b2cde0;
+
+  --color-elements: #909DA6;
+
+  --overlay: #e1e8f165;
+  --color-main-white:  #ffffff;
+  --color-highOp-overlay:#ffffffc6;
+
+
+  --hattifnatt-bg-color: #80a2c3;
+  --input-bg-color: var(--color-main);
+
+  /*CHAT*/
+  /*yellow*/
+  --user-msg: rgb(232, 222, 201);
+  --system-msg: var(--color-main);
+
+  /*white*/
+
+  /*SESSIONLIST*/
+  --sessionsList-bg-yellow: var(--color-button);
+  --color-sessionL-yellow:  #e1d0b8;
+
+  /*white*/
+  --sessionsList-bg-white: var(--color-main-white);
+  --color-sessionL-white:  rgb(228, 228, 228);
+
+
+  background-color: var(--color-main);
+  transition: background-color 0.1 ease-in-out 0s;
+}
+
+.App#DarkMode{
+  --color-main: #415360;
+  --color-accent:#576d7e;
+  --color-button:#b4976f; 
+  --color-button-disabled:#655f56;
+  --color-text-accent: #7fabca;
+  --color-text-main: #e1e8f1;
+  --color-button-accent:#91887A;
+
+  --color-elements:#33414c;
+  --overlay: #37393c66;
+  
+  --color-main-white:  rgb(182, 182, 182);
+
+  /*TEXT*/
+  --main-text-color: rgb(191, 187, 207);
+
+  --hattifnatt-bg-color: #405464;
+  --input-bg-color: #5e798b;
+
+  /*CHAT*/
+  /*yellow*/
+  --user-msg: #91887A;
+  --system-msg: var(--color-elements);
+
+  /*white*/
+
+  /*SESSIONLIST*/
+  /*yellow*/
+  --sessionsList-bg-yellow: #545454;
+  --color-sessionL-yellow:  #6b6761;
+
+  /*white*/
+  --sessionsList-bg-white: #747474;
+  --color-sessionL-white:  #989898;
+
+  background-color: var(--color-main);
+
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root{
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+main {
+  background-color: var(--color-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: var(--color-text-main);
+
+  height: calc(100vh - var(--nav-height) - var(--footer-height));
+}
+
+main > div{height: calc(100vh - var(--nav-height) - var(--footer-height));}
+
+.App {
+  text-align: center;
+  transition: background-color 0.1 ease-in-out 0s;
+}
+
+
+/* HTML ELEMENT */
+body a:hover {
+  cursor:pointer
+}
+
+
+p{ font-size:medium;}
+
+/*NAVBAR*/
+nav{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100vw;
+  height: var(--nav-height);
+}
+nav > div{
+  width: 20%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+nav .links{
+  display:flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-evenly;
+  font-size:x-large;
+
+}
+
+nav .links a{transition: color 0.2s ease-in-out 0s;}
+nav .links a:hover{
+  color: var(--color-button-accent);
+}
+
+nav .links .navActive{color:var(--color-button)}
+
+nav, footer{
+  background-color: var(--color-elements);
+  position: relative;
+  z-index: 12;
+}
+
+nav a, footer, nav p{
+  color: var(--color-text-main);
+  text-decoration: none;
+}
+/*FOOTER*/
+footer{
+  height: var(--footer-height);
+  overflow:hidden;
+  position: relative;
+  bottom: 0px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+button{
+  background-color: var(--color-button);
+  border-radius: var(--main-border-radius);
+  height: 7vh;
+  width: 8vw;
+  border: var(--color-button);
+  cursor:pointer;
+  font-family: var(--main-font);
+  font-size: 17px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out 0s;
+  color: var(--color-text-main);
+}
+
+button:hover{
+  background-color: var(--color-button-accent);
+}
+
+button a{font-family: var(--main-font);}
+button p{font-family: var(--main-font);}
+
+/* GENERAL */
+
+.noDisplay{
+  display:none;
+}
+
+/*OVERYLAY*/
+.overlay{
+  position: absolute;
+  top: 0;
+  height: calc(100vh - var(--nav-height) - var(--footer-height)); /*minus höjd av navbar*/
+  width: 100vw;
+  background-color: var(--overlay);
+  backdrop-filter: blur(100px);
+  z-index: 12;
+  opacity: 0.9;
+}
+
+
+input{
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  font-size: medium;
+  border: var(--main-border-width) solid var(--color-button-accent);
+  border-radius: var(--main-border-radius);
+  background-color: var(--input-bg-color);
+  color: var(--color-text-main);
+
+}
+
+input:focus{
+  border-color: var(--color-button);
+}

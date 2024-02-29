@@ -1,0 +1,222 @@
+#settingsWrapper{
+    height: 100vh;
+    width: 100vw;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#introText{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userInformation{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: var(--main-border-width) solid var(--color-text-main);
+    border-radius: var(--main-border-radius);
+    height: 30vh;
+    width: 30vw;
+    margin-bottom: 3vh;
+}
+
+.userInformation > div > h6{margin-bottom:  10px;}
+p.dateJoin{margin:0px;}
+.userInformation .modes{margin-right: 3vw;}
+.userInformation > div > button{margin-bottom: 20px;}
+.userInformation > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.col-3.modeLoad{margin-top: 27px;}
+
+.logout{
+    background-color: var(--color-text-main);
+    color: var(--color-main);
+}
+.logout:hover{
+    color: var(--color-elements);
+}
+
+/*  SESSIONSLIST */
+
+#YELLOWSessions .noConvo,
+#WHITESessions .noConvo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#YELLOWSessions section h6,
+#WHITESessions section h6{width: 70%; margin-bottom: 20px;}
+
+#YELLOWSessions section button{background-color: var(--color-text-accent);}
+#YELLOWSessions section button:hover{background-color: var(--color-button-accent);}
+
+.opactrue{opacity: 0.2;}
+#settingsWrapper .overlay {
+    top: var(--nav-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+    left: 0;
+}
+#sessionsListWrapper{
+    border: var(--main-border-width) solid var(--color-text-main);
+    border-radius: var(--main-border-radius);
+    width: 40%;
+    height: 80%;
+    transition: background-color 0.2s ease-in-out 0s;
+    /*backdrop-filter: blur(20px);*/
+}
+
+.closeBtn{
+    height:10%;
+    position: relative;
+    top:2vh;
+}
+
+.topMenu{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 23%;
+    transition: background-color 0.2 ease-in-out 0s;
+}
+.topMenu > div{
+    width:100%;
+    display:flex;
+    border-bottom: var(--main-border-width) solid var(--color-text-main);
+    transition: border-color 0.2s ease-in-out 0s;
+    text-align: center;
+}
+
+.topMenu > div:first-child:hover{
+    /*transition: background-color 0.2s ease-in-out 0s;*/
+    background-color: var(--sessionsList-bg-yellow);
+    list-style: disclosure;
+}
+.topMenu > div:last-child:hover{
+    /*transition: background-color 0.2s ease-in-out 0s;*/
+    background-color:  var(--sessionsList-bg-white);
+}
+.topMenu div h4{pointer-events: none; width: 100%;}
+.topMenu div:first-child{border-right:var(--main-border-width) solid var(--color-text-main);}
+.topMenu .topMenuActive{border-bottom: none; pointer-events: none;}
+
+.sessionsList{
+    display:flex;
+    flex-direction: row;
+    height: 75%;
+    width: 100%;
+}
+
+.sessionsList > div{
+    overflow-y: scroll;
+    height:100%;
+    width: 100%;
+    opacity: 0;
+    position: relative;
+    display: none;
+}
+
+.sessionsList > div.topMenuActive{
+    opacity: 1;
+    display: block;
+}
+
+.oneSession{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.oneSession .lastMessage, 
+.oneSession .sessionDate{
+    display:flex;
+    flex-direction: row;
+}
+
+#YELLOWSessions > .oneSession:nth-child(even){
+    background-color: var(--color-sessionL-yellow);
+}
+#WHITESessions > .oneSession:nth-child(even){
+    background-color: var(--color-sessionL-white);
+}
+
+.oneSession .lastMessage > h5,
+.oneSession .sessionDate > h5,
+.oneSession .lastMessage > p,
+.oneSession .sessionDate > p{
+    margin: 15px 10px 10px 0px;
+}
+.oneSession .lastMessage > p,
+.oneSession .sessionDate > p{
+    font-size: 17px;
+    margin: 22px 0px 25px 0px;
+}
+.oneSession .lastMessage > h6,
+.oneSession .sessionDate > h6{
+    margin: 20px 10px 0px 0px;
+}
+
+#sessionsListWrapper.YELLOW{
+    background-color: var(--sessionsList-bg-yellow);
+}
+#sessionsListWrapper.WHITE{
+    background-color:var(--sessionsList-bg-white);
+}
+
+
+/*CHAT*/
+.oneChat {display:none;}
+.oneChat.displayIsOpen{
+    display: block;
+    position: absolute;
+    left:0px;
+    top: 0px;
+    backdrop-filter: blur(10px);
+
+}
+
+#WHITESessions .oneChat.displayIsOpen{
+    background-color: var(--sessionsList-bg-white);
+}
+#YELLOWSessions .oneChat.displayIsOpen{
+    background-color: var(--sessionsList-bg-yellow);
+}
+
+.chatInfo > h5{
+    text-align: left;
+    margin: 20px 0px 20px 10px;
+}
+.chatInfo h6{
+    margin: 10px 0px 20px 0px;
+}
+
+.oneChat .sessionConvoWrapper{
+    height: 100%;
+}
+
+#YELLOWSessions .sessionConvoWrapper > .oneMessage > div > p,
+#YELLOWSessions .sessionConvoWrapper > .oneMessage > div > p{
+    color: var(--color-text-main);
+}
+#YELLOWSessions .sessionConvoWrapper > .oneMessage.system > div,
+#WHITESessions .sessionConvoWrapper > .oneMessage.system > div{
+    background-color: var(--system-msg);
+}
+#YELLOWSessions .sessionConvoWrapper > .oneMessage.user > div,
+#WHITESessions .sessionConvoWrapper > .oneMessage.user > div{
+    background-color: var(--user-msg);
+}
