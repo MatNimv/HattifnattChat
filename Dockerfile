@@ -1,16 +1,12 @@
 ## Build Environment
-FROM node:16 AS build-env
+FROM node:16
 
 # Build steps
 ADD . /app
 WORKDIR /app
-# COPY package.json package*.json ./
 
 RUN npm install
-RUN npm run build
 
-## Run Environment
-FROM nginx:alpine
-# Copy build artefacts
-COPY --from=build-env /app/build /usr/share/nginx/html
-COPY /nginx/nginx.config /etc/nginx/conf.d/default.conf
+COPY package.json package*.json ./
+
+CMD ["node", "server.js"];
